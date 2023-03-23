@@ -1,0 +1,17 @@
+GET /index.css HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+sec-ch-ua: "Brave";v="111", "Not(A:Brand";v="8", "Chromium";v="111"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+sec-ch-ua-platform: "macOS"
+Accept: text/css,*/*;q=0.1
+Sec-GPC: 1
+Accept-Language: ja;q=0.5
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: style
+Referer: http://localhost:8080/index.html
+Accept-Encoding: gzip, deflate, br
+Cookie: XSRF-TOKEN=eyJpdiI6IlQrdjZzd0M5ejlvaXlnb2FMeUF4a0E9PSIsInZhbHVlIjoiZzFnZS96cDlDenlKZmtnamZENU9RZzE4ZmpFUzhTM1o2VExFVG5mYjB3ZGJwWGVnZnZYeG91TzRHMHgrMWkrbEZHdHlDaWloZWwvNlpJRjFoaC9CWG9rM2RBU2xDakFvVE9TS2Q5T3doRFNmZWlUUDR5c1JOWHZ1RXhTQUkyeVkiLCJtYWMiOiI0ZDk0Y2E0MzVjM2I1ZGUwYzNmZTYzNDc0ZDI5NDM5MzEwNjNmOGY0ZjE2OGY1MmIwZTc2MzNmNjg1OGY3Y2EyIiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6Ik10TGFocDZUREFGRkRJTm9zdHJxQWc9PSIsInZhbHVlIjoiZ2NCdlZIMGR0OWo5UzVkY29qOUlVU2g3bVIvODBrbHJ1c3lWK2dJU2NWUFhSTm1zeUwxS2ZkUFhHTmRRODFjT0s4YVpuekpjZWM5OVU1eUdYTVI1UEZNZkhzcWVFMG9Bb2hsdEEyUGdqR1M2L2VPVlFnTEloa20xRkJqbG9XRnMiLCJtYWMiOiJiMjViYTdmMjAzZGIwZWNjY2Y2MWFjMjRmZTFjZWE1YjQ2MzRlNTFiYmJjZjJmOTBiYTg0OTlkYTk1YTRhYjhlIiwidGFnIjoiIn0%3D
+
