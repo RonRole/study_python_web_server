@@ -45,7 +45,6 @@ class Worker(Thread):
                 f.write(request_bytes)
             # HTTPリクエストをパースする
             request = self.parse_http_request(request_bytes)
-
             if request.path in URL_VIEW:
                 view = URL_VIEW[request.path]
                 response = view(request)
@@ -53,17 +52,18 @@ class Worker(Thread):
                 try:
                     response_body = self.get_static_file_content(request.path)
                     content_type = None
-                    response_line = "HTTP/1.1 200 OK\r\n"
+                    response = HTTPResponse(status_code=200, response_body=response_body)
                 except OSError:
                     traceback.print_exc()
                     response_body = b"<html><body><h1>404 Not Found</h1></body></html>"
                     content_type = "text/html; charset=UTF-8"
-                    response_line = "HTTP/1.1 404 Not Found\r\n"
-            response_header = self.build_response_header(request.path, response_body, content_type)
+                    response = HTTPResponse(body=response_body, content_type=content_type, status_code=404)
+            response_line = self.build_response_line(response)
+            response_header = self.build_response_header(request.path, response.body, response.content_type)
             # リクエストpathの拡張子をみて、Content-Typeに変換する
-            response = (response_line + response_header + "\r\n").encode() + response_body
+            response_bytes = (response_line + response_header + "\r\n").encode() + response.body
             # クライアントへレスポンスを送信
-            self.client_socket.send(response)
+            self.client_socket.send(response_bytes)
         except Exception:
             print('===Worker:リクエストの処理中にエラーが発生しました===')
             traceback.print_exc()
